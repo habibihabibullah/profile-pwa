@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="document" content="webprogaming">
+    <meta name="keywords" content="My Profil">
+    <meta name="author" content="Habibi Habibullah Hiroshi Nandes">
+    
+    <!-- 1. TAMBAHAN WAJIB PWA: Memanggil file Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <link rel="stylesheet" href="style.css?v=1.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <title>My Profil</title>
+
+    <style>
+        .notification-section { margin: 40px 0; padding: 0; background: none !important; border: none !important; }
+        .notification-box { background-color: #2e2a5e; border: 2px dashed #1d9bf0; border-radius: 15px; padding: 30px; text-align: center; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .notification-box h3 { color: #ffffff; margin-bottom: 15px; font-size: 1.3rem; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">MyProfile</div>
+            <ul class="nav-menu">
+                <li><a href="#profile">Profil</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#favorite-section">Favorit</a></li>
+                <li><a href="#peta">Lokasi</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        
+        <section id="profile" class="profile">
+            <div class="profile-container">
+                <div class="profile-img">
+                    <img src="foto-habibi.jpeg" alt="Foto Profil">
+                </div>
+                <div class="profile-info">
+                    <h1 class="verified-name" style="text-align: center; display: block; width: 100%;">
+                        Habibi Habibullah Hiroshi  
+                        <span class="badge-container" style="white-space: nowrap; display: inline-flex; align-items: center; vertical-align: middle;">
+                            Nandes 
+                            <span class="badge-verified" style="margin-left: 6px; display: inline-flex; align-items: center; color: #1d9bf0;">
+                                <i class="fas fa-check-circle"></i>
+                            </span>
+                        </span>
+                    </h1>
+                    <p class="profile-text">
+                        Mahasiswa Informatika semester 4 di Universitas Nahdlatul Ulama
+                        Al-Ghozali Cilacap yang memiliki minat besar di bidang teknologi
+                        dan pemrograman.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tentang">
+            <h2>Tentang Saya</h2>
+            <p id="saya">
+                Halo 👋, saya Habibi Habibullah mahasiswa Informatika semester 4 di Universitas Nahdlatul Ulama Al-Ghozali Cilacap.  
+                Saya memiliki ketertarikan di dunia teknologi, khususnya pada pengembangan web dan pemrograman.
+                Saya sedang fokus belajar tentang HTML, CSS, JavaScript, dan backend development untuk membangun aplikasi web yang lebih modern dan interaktif.  
+                Saya juga sedang mengembangkan kemampuan dalam memahami logika pemrograman, database, dan sistem CRUD.
+                Di luar dunia coding, saya juga memiliki beberapa hobi seperti olahraga (futsal dan sepak bola), serta aktivitas yang membantu menjaga keseimbangan hidup.
+            </p>
+        </section>
+
+        <section id="hobi-section">
+            <h2>Hobi Saya</h2>
+            <ul class="hobi">
+                <li>Main game</li>
+                <li>Menonton YouTube</li>
+                <li>Browsing internet</li>
+                <li>Bersantai</li>
+            </ul>
+        </section>
+
+        <section id="goals">
+            <h2>My Top 3 Goals</h2>
+            <ol>
+                <li>Menjadi orang sukses</li>
+                <li>Pengin menjadi orang yang berguna bagi nusa dan bangsa</li>
+                <li>Mendapatkan nilai A dalam matakuliah web programming</li>
+            </</ol>
+        </section>
+
+        <section id="favorite-section">
+            <h2>Favorite Things</h2>
+            <div class="table-container">
+                <table id="favorite">
+                    <thead><tr><th>Sport</th><th>Movie</th></tr></thead>
+                    <tbody>
+                        <tr><td>Badminton</td><td>End Games</td></tr>
+                        <tr><td>Rcl</td><td>Amazing Spiderman 2</td></tr>
+                        <tr><td>Futsal</td><td>John Wick</td></tr>
+                        <tr><td>Joging</td><td>Oppenheimer</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="artikel" class="article">
+            <h2>Artikel Saya</h2>
+            <div id="article-container"></div>
+            <a href="../CMS/index.html"><button class="cms-btn">Buat Artikel</button></a>
+        </section>
+
+        <section id="notifikasi-sistem-section" class="glass-card">
+            <h3>Sistem Push Notification</h3>
+            <button id="enable-notification-btn" class="cms-btn">🔔 Cek Notifikasi Sistem</button>
+        </section>
+
+        <section id="peta">
+            <h2>Lokasi Saya</h2>
+            <div id="map-profile" class="responsive-map"></div>
+        </section>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-left">
+                    <h2>Let's Connect</h2>
+                    <p>Terima kasih telah mengunjungi website profile saya. Silakan hubungi saya.</p>
+                    <div class="footer-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <h2>Contact Us</h2>
+                    <form>
+                        <input type="text" placeholder="Nama" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="text" placeholder="Pesan" required>
+                        <button type="submit">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2026 Habibi Habibullah Hiroshi Nandes</div>
+        </footer>
+    </div>
+
+    <div id="custom-popup-modal" class="popup-overlay">
+        <div class="popup-box">
+            <div class="popup-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Service Worker Aktif!</h3>
+            <button id="close-popup-btn">Tutup!</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script src="map-logic.js" defer></script>
+
+    <!-- 2. TAMBAHAN WAJIB PWA: Mendaftarkan sw.js agar bisa di-install offline -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker berhasil didaftarkan!', reg))
+                    .catch(err => console.log('Service Worker gagal didaftarkan:', err));
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "Website Profile Pribadi - Habibi",
+  "short_name": "HabibiProfile",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#2e2a5e",
+  "theme_color": "#2e2a5e",
+  "icons": [
+    {
+      "src": "foto-habibi.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
